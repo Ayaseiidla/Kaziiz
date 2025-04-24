@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Аудармашы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kazkiiz: Аудармашы</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Басты бет</a></li>
+                <li><a href="translate.html">Аудармашы</a></li>
+                <li><a href="literature.html">Әдебиет</a></li>
+                <li><a href="register.html">Тіркелу</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Онлайн аудармашы</h2>
+        <textarea id="inputText" placeholder="Мәтін енгізіңіз..."></textarea>
+        <button onclick="translateText()">Аудару</button>
+        <p><strong>Аударма нәтижесі:</strong></p>
+        <div id="outputText">...</div>
+    </section>
+    <script>
+        function translateText() {
+            const input = document.getElementById("inputText").value.toLowerCase();
+            const translations = {
+                "сәлем": "привет",
+                "қалайсың": "как дела",
+                "рахмет": "спасибо",
+                "қазақ тілі": "казахский язык",
+                "кітап": "книга"
+            };
+            const output = translations[input] || "Аударма табылмады";
+            document.getElementById("outputText").innerText = output;
+        }
+    </script>
+</body>
+</html>
